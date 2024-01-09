@@ -6,6 +6,21 @@
     <title>Unity WebGL Player | Simboard</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+
+    <style>
+      /* Hide the scrollbar */
+      body {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+      
+      /* Hide the commented-out parts */
+      #unity-footer {
+        display: none;
+      }
+    </style>
+
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -16,12 +31,12 @@
           <div id="unity-progress-bar-full"></div>
         </div>
       </div>
-      <div id="unity-warning"> </div>
+      <!-- <div id="unity-warning"> </div>
       <div id="unity-footer">
         <div id="unity-webgl-logo"></div>
         <div id="unity-fullscreen-button"></div>
         <div id="unity-build-title">Simboard</div>
-      </div>
+      </div> -->
     </div>
     <script>
 
@@ -94,8 +109,8 @@
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "1536px";
-        canvas.style.height = "864px";
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
       }
 
       loadingBar.style.display = "block";
@@ -111,7 +126,7 @@
                   unityInstance.SetFullscreen(1);
                 };
               }).catch((message) => {
-                alert(message);
+                //alert(message);
               });
             };
 
